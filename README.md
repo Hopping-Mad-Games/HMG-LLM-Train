@@ -1,37 +1,43 @@
-# LLM Trainer MVP
+# 🦙 LLM Trainer MVP (AGPL‑3.0)
 
-This repository contains the **minimum‑viable implementation** of a local-first LLM fine‑tuning framework built around a **ReactPy + FastAPI** user interface and a plug‑in oriented backend.
-
-## Quick start (dev)
-
-```bash
-git clone <repo-url>
-cd llm_trainer_mvp
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-./scripts/dev.sh   # hot‑reload server on http://localhost:8000
-```
-
-## Project layout (top-level)
-
-| Path                 | Purpose |
-|----------------------|---------|
-| `core/`              | Training engine (scheduler, data pipes, trainers, exporters) |
-| `ui/`                | ReactPy application plus static assets |
-| `plugins/`           | Drop‑in nodes that extend the graph (each in its own directory) |
-| `datasets/`          | Sample corpora for smoke tests |
-| `docs/`              | Longer‑form architecture & contribution guides |
-| `docker/`            | Container and compose files for deployment |
-| `scripts/`           | Helper CLI for dev and CI |
-
-For full details see `docs/ARCHITECTURE.md`.
+A local‑first, plug‑in‑driven fine‑tuning framework for text and vision LLMs.  
+ReactPy front‑end · FastAPI back‑end · LoRA / QLoRA inside · One‑command Docker deploy.
 
 ---
 
-## External Documentation
+## ✨ Features
 
-- [FastAPI Documentation](https://fastapi.tiangolo.com/)
-- [ReactPy Documentation](https://reactpy.dev/)
-- [Uvicorn Documentation](https://www.uvicorn.org/)
-- [Python-dotenv Documentation](https://saurabh-kumar.com/python-dotenv/)
-- [Python Official Docs](https://docs.python.org/3/)
+* Drag‑and‑drop **node graph UI** (ReactPy + react‑flow).  
+* **Dataset → Tokenize → Train → Export** pipeline, LoRA by default.  
+* Hot‑reload dev loop (`watchfiles` + `uvicorn`).  
+* Docker Compose for NVIDIA, ROCm & CPU.  
+* Fully **AGPL‑3.0**; every improvement must stay open.
+
+---
+
+## Quick‑start
+
+```bash
+git clone https://github.com/you/llm_trainer.git
+cd llm_trainer
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+./scripts/dev.sh
+```
+
+Open <http://localhost:8000>.
+
+---
+
+## 📜 License & attributions
+
+This repository is **AGPL‑3.0‑or‑later**.  
+Design elements were inspired by (but no code copied from):
+
+| Project | License | Idea borrowed |
+|---------|---------|---------------|
+| LLaMA‑Factory | Apache‑2.0 | Hyper‑param presets |
+| text‑generation‑webui | AGPL‑3.0 | Adapter merge UX |
+| ComfyUI | MIT | Node‑graph UI |
+
+Third‑party packages and their licenses are cataloged in **THIRDPARTY.md**.

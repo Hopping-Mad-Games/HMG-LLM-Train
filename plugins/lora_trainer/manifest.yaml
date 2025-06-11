@@ -1,0 +1,7 @@
+id: lora_trainer
+license: "Apache-2.0"
+exports:
+  backend: "plugins.lora_trainer.backend:LoRATrainerNode"
+ui:
+  slot: "graph/nodes"
+  component: "plugins.lora_trainer.ui_component:LoRATrainerPane"
