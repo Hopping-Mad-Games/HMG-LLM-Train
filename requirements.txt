@@ -1,0 +1,6 @@
+# Requirements for LLM Trainer MVP
+fastapi
+uvicorn
+reactpy
+python-dotenv
+# Add more as needed for core, plugins, and UI
