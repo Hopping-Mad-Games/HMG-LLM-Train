@@ -1,6 +1,10 @@
 # Requirements for LLM Trainer MVP
-fastapi
+fastapi>=0.111
 uvicorn
-reactpy
+reactpy>=2.0b2
 python-dotenv
+accelerate>=0.29
+peft>=0.11
+bitsandbytes>=0.43
+watchfiles
 # Add more as needed for core, plugins, and UI
